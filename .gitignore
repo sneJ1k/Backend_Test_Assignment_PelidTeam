@@ -1,13 +1,13 @@
 # ======================
-# === PYTHON / DJANGO ==
+# === PYTHON ===========
 # ======================
-
-# Кэш и байткод
 __pycache__/
 *.py[cod]
 *$py.class
 
-# Виртуальные окружения
+# ======================
+# === ВИРТ. ОКРУЖЕНИЯ ==
+# ======================
 .venv/
 venv/
 env/
@@ -15,13 +15,23 @@ ENV/
 env.bak/
 venv.bak/
 
+# ======================
+# === DJANGO ===========
+# ======================
+
 # База данных
 db.sqlite3
 db.sqlite3-journal
 
-# Медиа и статические файлы
-media/
-staticfiles/
+# Медиафайлы пользователей — храним структуру, но не контент
+/media/*
+!/media/.gitkeep
+
+# Собранная статика (collectstatic)
+# При желании можно хранить исходники в static_src/
+# но не результат сборки
+/static/*
+!/static/.gitkeep
 
 # Логи и временные файлы
 *.log
@@ -32,8 +42,31 @@ staticfiles/
 .DS_Store
 Thumbs.db
 
+# Локальные настройки
+local_settings.py
+.env
+.envrc
+config.json
+
 # ======================
-# === СБОРКА И ДИСТРИБЬЮЦИЯ ===
+# === ТЕСТЫ / COVERAGE =
+# ======================
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py.cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# ======================
+# === СБОРКА / DIST ====
 # ======================
 .Python
 build/
@@ -48,42 +81,13 @@ wheels/
 share/python-wheels/
 
 # ======================
-# === ТЕСТИРОВАНИЕ ===
-# ======================
-.coverage
-.coverage.*
-htmlcov/
-.tox/
-.nox/
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py.cover
-.hypothesis/
-.pytest_cache/
-cover/
-
-# ======================
-# === ДОКУМЕНТАЦИЯ ===
+# === ДОКУМЕНТАЦИЯ ====
 # ======================
 docs/_build/
 .site
 
 # ======================
-# === СРЕДА И КОНФИГ ===
-# ======================
-.env
-.envrc
-local_settings.py
-config.json
-.pdm-python
-.pdm-build/
-.pybuilder/
-target/
-
-# ======================
-# === IDE / EDITORS ===
+# === ИНСТРУМЕНТЫ И IDE =
 # ======================
 .vscode/
 .idea/
@@ -92,23 +96,25 @@ target/
 .ropeproject
 
 # ======================
-# === ИНСТРУМЕНТЫ ===
+# === АНАЛИЗ И TYPE CHECK=
 # ======================
 .ruff_cache/
-.pyre/
-.pytype/
 .mypy_cache/
 .dmypy.json
 dmypy.json
+.pyre/
+.pytype/
 cython_debug/
-.pypirc
 
 # ======================
-# === ПРОЧЕЕ ===
+# === ПРОЧЕЕ ============
 # ======================
+.pypirc
+.pdm-python
+.pdm-build/
+.abstra/
+.cursorignore
+.cursorindexingignore
 marimo/_static/
 marimo/_lsp/
 __marimo__/
-.cursorignore
-.cursorindexingignore
-.abstra/
