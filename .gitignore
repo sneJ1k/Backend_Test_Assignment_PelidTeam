@@ -2,6 +2,36 @@
 __pycache__/
 *.py[codz]
 *$py.class
+# Виртуальная среда
+.venv/
+
+# Кэш Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Локальные настройки редактора
+.vscode/
+
+# База данных SQLite
+db.sqlite3
+
+# Медиа-файлы пользователя
+media/
+
+# Сборка статики (если используешь collectstatic)
+staticfiles/
+
+# Логи и временные файлы
+*.log
+*.pot
+*.pyc
+*.swp
+.DS_Store
+
+# Файлы лицензий и системные файлы
+*.egg-info/
+*.egg
 
 # C extensions
 *.so
