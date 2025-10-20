@@ -72,15 +72,7 @@ pip install -r requirements.txt
 python manage.py migrate
 ```
 
-### 2. Загрузка фикстур с начальными данными
-
-Фикстуры создают базовые структуры для отображения функционала API.
-
-```bash
-python manage.py loaddata places/fixtures/places.json
-```
-
-### 3. Создание суперпользователя
+### 2. Создание суперпользователя
 
 ```bash
 python manage.py createsuperuser
@@ -88,6 +80,14 @@ python manage.py createsuperuser
 
 Следуйте инструкциям для ввода имени пользователя, email и пароля.
 Суперпользователь нужен для доступа к админ-панели: `http://127.0.0.1:8000/admin/`.
+
+### 3. Загрузка фикстур с начальными данными
+
+Фикстуры создают базовые структуры для отображения функционала API.
+
+```bash
+python manage.py loaddata places/fixtures/places.json
+```
 
 ### 4. Собираем статики (для CKEditor и админки) в директорию staticfiles:
 ```bash
